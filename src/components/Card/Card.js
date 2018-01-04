@@ -15,14 +15,15 @@ class Card extends Component {
   };
   
   handleClick = async () => {
-    const houseSwornMembers = await this.props.showMoreDetails(await fetchMoreData(this.props.houseData.swornMembers)).currentSwornMembers;
+    const swornMemberData = await fetchMoreData(this.props.houseData.swornMembers);
+    const houseSwornMembers = !this.state.houseSwornMembers.length 
+      ? await this.props.showMoreDetails(swornMemberData).currentSwornMembers
+      : [];
     const showMore = !this.state.showMore;
-    this.setState({ showMore, houseSwornMembers });
-    console.log(this.state.houseSwornMembers)
+    this.setState({ showMore, houseSwornMembers });    
   }
 
   render() {
-    const { houseData, showMoreDetails, currentSwornData } = this.props;
     const { 
       name, 
       words, 
@@ -31,14 +32,18 @@ class Card extends Component {
       titles, 
       ancestralWeapons, 
       coatOfArms,
-      swornMembers 
-    } = houseData;
+    } = this.props.houseData;
 
     const swornMembersDisplay = this.state.houseSwornMembers.map((member, index) => 
       <p key={`member-${index}`}>{member.name}</p>
     );
 
-    const displayMore = this.state.showMore ? swornMembersDisplay : null;
+    const displayMore = this.state.showMore 
+      ? <div>
+          <h3>Sworn Members:</h3> 
+          {swornMembersDisplay}
+        </div>
+      : null;
 
     const weaponsDisplay = ancestralWeapons.map((weapon, index) => 
       <p key={`weapon-${index}`}>Ancestral Weapons: {weapon}</p>
@@ -52,8 +57,6 @@ class Card extends Component {
       <p key={`title-${index}`}>Title: {title}</p>
     );
 
-
-    console.log(currentSwornData)
     return (
       <div 
         className='Card'
