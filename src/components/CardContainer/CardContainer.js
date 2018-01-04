@@ -3,11 +3,11 @@ import { connect } from 'react-redux';
 import Card from '../Card/Card';
 import PropTypes, { array } from 'prop-types';
 
-const CardContainer = ({ data }) => {
-  const cards = data.map((house, index) => 
+const CardContainer = ({ houseData }) => {
+  const cards = houseData.map((house, index) => 
     <Card 
       key={`card-${index}`} 
-      houseData={data[index]} />
+      houseData={houseData[index]} />
   );
 
   return (
@@ -18,9 +18,9 @@ const CardContainer = ({ data }) => {
 };
 
 CardContainer.propTypes = {
-  data: array.isRequired
+  houseData: array.isRequired
 };
 
-const mapStateToProps = ({ data }) => ({ data });
+const mapStateToProps = ({ houseData }) => ({ houseData });
 
 export default connect(mapStateToProps, null)(CardContainer);

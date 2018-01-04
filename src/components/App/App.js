@@ -4,7 +4,7 @@ import logo from './logo.svg';
 import wolf from './wolf.gif';
 import './App.css';
 import { connect } from 'react-redux';
-import { fetchData } from '../../actions';
+import { setData } from '../../actions';
 import { dataFetch } from '../../helpers/helper';
 import CardContainer from '../CardContainer/CardContainer';
 
@@ -18,7 +18,7 @@ class App extends Component {
   }
 
   async componentDidMount() {
-    await this.props.fetchData(await dataFetch());
+    await this.props.setData(await dataFetch());
     const isLoaded = !this.state.isLoaded;
     await this.setState({ isLoaded });
   }
@@ -43,13 +43,13 @@ class App extends Component {
 }
 
 App.propTypes = {
-  data: array.isRequired,
-  fetchData: func.isRequired
+  houseData: array.isRequired,
+  setData: func.isRequired
 };
 
-const mapStateToProps = ({ data }) => ({ data });
+const mapStateToProps = ({ houseData }) => ({ houseData });
 const mapDispatchToProps = dispatch => ({ 
-  fetchData: (data) => dispatch(fetchData(data))
+  setData: (data) => dispatch(setData(data))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

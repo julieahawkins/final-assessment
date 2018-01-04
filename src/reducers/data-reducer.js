@@ -1,4 +1,4 @@
-export const data = (state=[], action) => {
+export const houseData = (state=[], action) => {
   switch (action.type) {
   case 'FETCH_DATA':
     return action.data;

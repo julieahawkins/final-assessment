@@ -7,6 +7,6 @@ describe('All actions', () => {
       type: 'FETCH_DATA',
       data: mockData 
     };
-    expect(actions.fetchData(mockData)).toEqual(expected);
+    expect(actions.setData(mockData)).toEqual(expected);
   });
 });
