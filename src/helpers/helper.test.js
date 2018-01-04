@@ -4,7 +4,9 @@ describe('dataFetch', () => {
   it('should return all fetched houseData as an array', async () => {
     window.fetch = jest.fn().mockImplementation(() =>
       Promise.resolve({
-        json: () => Promise.resolve([{ name: 'House Lannister of Casterly Rock' }])
+        json: () => Promise.resolve(
+          [{ name: 'House Lannister of Casterly Rock' }]
+        )
       })
     );
 
