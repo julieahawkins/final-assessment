@@ -29,8 +29,8 @@ const Card = ({ houseData, showMoreDetails }) => {
   );
 
   const handleClick = async () => {
-    showMoreDetails(await fetchMoreData(swornMembers))
-    console.log('swornMembers')
+    const array = await showMoreDetails(await fetchMoreData(swornMembers))
+    console.log(array)
   }
 
   return (

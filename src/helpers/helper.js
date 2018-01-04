@@ -8,19 +8,21 @@ export const dataFetch = async () => {
 };
 
 export const fetchMoreData = async (swornMembers) => {
-  swornMembers.forEach(async (url) => {
+  const swornData = swornMembers.map(async (url) => {
     try {
-      const rawData = await fetch(url, {
+      const rawData = await fetch('http://localhost:3001/api/v1/character', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
-        body: {url: JSON.stringify(url)}
+        body: JSON.stringify({ url: url })
       });
-      const memberData = await rawData.json();
-      console.log(memberData)
+
+      return await rawData.json();
     } catch (error) {
       return null;
     }
   });
+
+  return Promise.all(swornData)
 };
