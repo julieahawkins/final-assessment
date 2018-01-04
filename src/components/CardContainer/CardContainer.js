@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 import Card from '../Card/Card';
 
 const CardContainer = ({ data }) => {
-  const cards = data.map(house => {
-    return <Card />
+  const cards = data.map((house, index) => {
+    return <Card key={`card-${index}`} houseData={data[index]} />
   })
   return (
     <div className='Container'>

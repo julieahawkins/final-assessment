@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PropTypes, { shape, func, string } from 'prop-types';
+import PropTypes, { func, array } from 'prop-types';
 import logo from './logo.svg';
 import wolf from './wolf.gif';
 import './App.css';
@@ -43,7 +43,7 @@ class App extends Component {
 }
 
 App.propTypes = {
-  data: shape({ data: 'object' }),
+  data: array.isRequired,
   fetchData: func.isRequired
 };
 

@@ -1,9 +1,23 @@
 import React from 'react';
 
-const Card = () => {
+const Card = ({ houseData }) => {
+  console.log(houseData)
+  const { 
+    name, 
+    words, 
+    founded, 
+    seats, 
+    titles, 
+    ancestralWeapons, 
+    coatOfArms 
+  } = houseData;
+
   return (
     <div className='Card'>
-      <h1>i am a card</h1>
+      <h1>{name}</h1>
+      <h2>{words}</h2>
+      <h3>{founded}</h3>
+      <p>{coatOfArms}</p>
     </div>
   )
 }
