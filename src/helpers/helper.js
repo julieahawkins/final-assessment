@@ -10,9 +10,15 @@ export const dataFetch = async () => {
 export const fetchMoreData = async (swornMembers) => {
   swornMembers.forEach(async (url) => {
     try {
-      const rawData = await fetch(url);
-      const member = await rawData.json();
-      console.log(member)
+      const rawData = await fetch(url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: {url: JSON.stringify(url)}
+      });
+      const memberData = await rawData.json();
+      console.log(memberData)
     } catch (error) {
       return null;
     }
