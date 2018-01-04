@@ -15,8 +15,8 @@ class Card extends Component {
   }
   
   handleClick = async () => {
-    const { swornMembersUrls } = this.props.houseData;
-    const swornMemberData = await fetchMoreData(swornMembersUrls);
+    const { swornMembers } = this.props.houseData;
+    const swornMemberData = await fetchMoreData(swornMembers);
     const houseSwornMembers = !this.state.houseSwornMembers.length 
       ? await this.props.showMoreDetails(swornMemberData).currentSwornMembers
       : [];
