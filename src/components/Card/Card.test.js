@@ -10,9 +10,9 @@ describe('Card test', () => {
   });
 
   const setup = () => {
-    const props = {
-      showMoreDetails: jest.fn()
-    };
+    // const props = {
+    //   showMoreDetails: jest.fn()
+    // };
 
     const mockHouseDataProps = {
       name: 'House Hightower of the Hightower', 
@@ -49,9 +49,9 @@ describe('Card test', () => {
   });
 
   it.skip('should change state then card is clicked', () => {
-    const renderedCard = shallow(<Card />)
-    const mockHandleClick = jest.fn();
+    const renderedCard = shallow(<Card />);
+    // const mockHandleClick = jest.fn();
     renderedCard.mockHandleClick();
-    expect(showMoreDetails).toHaveBeenCalled()
+    // expect(showMoreDetails).toHaveBeenCalled();
   });
 });
