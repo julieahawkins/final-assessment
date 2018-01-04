@@ -12,6 +12,10 @@ const Card = ({ houseData }) => {
     coatOfArms 
   } = houseData;
 
+  const seatDisplay = seats.map((seat, index) => {
+    return <p key={`seat-${index}`}>seat: {seat}</p>
+  })
+
   const titleDisplay = titles.map((title, index) => {
     return <p key={`title-${index}`}>title: {title}</p>
   })
@@ -21,6 +25,7 @@ const Card = ({ houseData }) => {
       <h1>{name}</h1>
       <h2>{words}</h2>
       <h3>{founded}</h3>
+      {seatDisplay}
       {titleDisplay}
       <p>{coatOfArms}</p>
     </div>
