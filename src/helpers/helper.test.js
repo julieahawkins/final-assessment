@@ -36,7 +36,7 @@ describe('fetchMoreData', () => {
         )
       })
     );
-    const url = ['house member url']
+    const url = ['house member url'];
     const mockHouseData = [{ name: 'House Lannister of Casterly Rock' }];
     const fetch = await fetchMoreData(url);
 
