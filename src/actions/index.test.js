@@ -9,4 +9,13 @@ describe('All actions', () => {
     };
     expect(actions.setData(mockData)).toEqual(expected);
   });
+
+  it('has a type of SHOW_MORE', () => {
+    const mockData = [{}];
+    const expected = {
+      type: 'SHOW_MORE',
+      currentSwornMembers: mockData 
+    };
+    expect(actions.showMoreDetails(mockData)).toEqual(expected);
+  });
 });

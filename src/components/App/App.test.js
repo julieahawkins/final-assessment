@@ -1,7 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import App from './App';
+import { Provider } from 'react-redux';
 import configureMockStore from 'redux-mock-store';
+import App from './App';
 
 describe('App test', () => {
   const fakeStore = configureMockStore()({
@@ -10,7 +11,7 @@ describe('App test', () => {
 
   const setup = () => {
     const props = {
-      fetchData: jest.fn(),
+      fetchData: jest.fn()
     };
 
     const wrapper = shallow(
@@ -25,10 +26,10 @@ describe('App test', () => {
       props,
       Component
     };
-  }  
+  };  
 
   it('should match its snap shot', () => {
 
     expect(setup.wrapper).toMatchSnapshot();
   });
-})
+});

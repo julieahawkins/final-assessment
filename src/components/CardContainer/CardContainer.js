@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Card from '../Card/Card';
-import PropTypes, { array } from 'prop-types';
+import { array } from 'prop-types';
 
 const CardContainer = ({ houseData }) => {
   const cards = houseData.map((house, index) => 

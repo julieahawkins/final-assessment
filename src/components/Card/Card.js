@@ -1,44 +1,88 @@
-import React from 'react';
-import PropTypes, { object } from 'prop-types';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { object, func } from 'prop-types';
+import { showMoreDetails } from '../../actions';
+import { fetchMoreData } from '../../helpers/helper';
 
-const Card = ({ houseData }) => {
-  const { 
-    name, 
-    words, 
-    founded, 
-    seats, 
-    titles, 
-    ancestralWeapons, 
-    coatOfArms 
-  } = houseData;
+class Card extends Component {
+  constructor(props) {
+    super(props);
 
-  const weaponsDisplay = ancestralWeapons.map((weapon, index) => 
-    <p key={`weapon-${index}`}>Ancestral Weapons: {weapon}</p>
-  );
+    this.state = {
+      showMore: false,
+      houseSwornMembers: []
+    };
+  }
+  
+  handleClick = async () => {
+    const { swornMembers } = this.props.houseData;
+    const swornMemberData = await fetchMoreData(swornMembers);
+    const houseSwornMembers = !this.state.houseSwornMembers.length 
+      ? await this.props.showMoreDetails(swornMemberData).currentSwornMembers
+      : [];
+    const showMore = !this.state.showMore;
+    this.setState({ showMore, houseSwornMembers });    
+  }
 
-  const seatDisplay = seats.map((seat, index) => 
-    <p key={`seat-${index}`}>Seat: {seat}</p>
-  );
+  render() {
+    const { 
+      name, 
+      words, 
+      founded, 
+      seats, 
+      titles, 
+      ancestralWeapons, 
+      coatOfArms
+    } = this.props.houseData;
 
-  const titleDisplay = titles.map((title, index) => 
-    <p key={`title-${index}`}>Title: {title}</p>
-  );
+    const { houseSwornMembers } = this.state;
 
-  return (
-    <div className='Card'>
-      <h1>{name}</h1>
-      <h2>{words}</h2>
-      <h3>Founded: {founded || 'N/A'}</h3>
-      {seatDisplay}
-      {titleDisplay}
-      {weaponsDisplay}
-      <p>Coat of Arms: {coatOfArms}</p>
-    </div>
-  );
-};
+    const swornMembersDisplay = houseSwornMembers.map((member, index) => 
+      <p key={`member-${index}`}>{member.name}</p>
+    );
+
+    const displayMore = this.state.showMore 
+      ? <div><h3>Sworn Members:</h3>{swornMembersDisplay}</div>
+      : null;
+
+    const weaponsDisplay = ancestralWeapons.map((weapon, index) => 
+      <p key={`weapon-${index}`}>Ancestral Weapons: {weapon}</p>
+    );
+
+    const seatDisplay = seats.map((seat, index) => 
+      <p key={`seat-${index}`}>Seat: {seat}</p>
+    );
+
+    const titleDisplay = titles.map((title, index) => 
+      <p key={`title-${index}`}>Title: {title}</p>
+    );
+
+    return (
+      <div 
+        className='Card'
+        onClick={this.handleClick}>
+        <h1>{name}</h1>
+        <h2>{words}</h2>
+        <h3>Founded: {founded || 'N/A'}</h3>
+        {seatDisplay}
+        {titleDisplay}
+        {weaponsDisplay}
+        <p>Coat of Arms: {coatOfArms}</p>
+        {displayMore}
+      </div>
+    );
+  }
+}
 
 Card.propTypes = {
-  houseData: object.isRequired
+  houseData: object.isRequired,
+  showMoreDetails: func.isRequired
 };
 
-export default Card;
+const mapStateToProps = ({ currentSwornData }) => ({ currentSwornData });
+
+const mapDispatchToProps = dispatch => ({ 
+  showMoreDetails: (swornMembers) => dispatch(showMoreDetails(swornMembers))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Card);

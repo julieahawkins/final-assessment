@@ -1,10 +1,20 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import Card from './Card';
+import { Provider } from 'react-redux';
+import configureMockStore from 'redux-mock-store';
 
 describe('Card test', () => {
-  it('should match its snap shot', () => {
-    const mockHouseData = {
+  const fakeStore = configureMockStore()({
+    currentSwornData: []
+  });
+
+  const setup = () => {
+    const props = {
+      showMoreDetails: jest.fn()
+    };
+
+    const mockHouseDataProps = {
       name: 'House Hightower of the Hightower', 
       words: 'We Light the Way', 
       founded: 'Age of Dawn', 
@@ -21,8 +31,27 @@ describe('Card test', () => {
       coatOfArms: 'Cendrée, a tower argent with a beacon on fire gules'  
     };
 
-    const renderedCard = shallow(<Card houseData={mockHouseData}/>);
+    const wrapper = shallow(
+      <Provider store={fakeStore}>
+        <Card houseData={mockHouseDataProps}/>
+      </Provider>
+    );
+    const Component = wrapper.find(Card);
 
-    expect(renderedCard).toMatchSnapshot();
+    return {
+      Component
+    };
+  };
+
+  it('should match its snap shot', () => {
+    
+    expect(setup.wrapper).toMatchSnapshot();
+  });
+
+  it.skip('should change state then card is clicked', () => {
+    const renderedCard = shallow(<Card />)
+    const mockHandleClick = jest.fn();
+    renderedCard.mockHandleClick();
+    expect(showMoreDetails).toHaveBeenCalled()
   });
 });
