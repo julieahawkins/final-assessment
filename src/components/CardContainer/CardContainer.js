@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import Card from '../Card/Card';
 
 const CardContainer = ({ data }) => {
   const cards = data.map(house => {
