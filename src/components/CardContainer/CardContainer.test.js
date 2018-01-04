@@ -1,31 +1,25 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import App from './App';
+import CardContainer from './CardContainer';
 import configureMockStore from 'redux-mock-store';
 
-describe('App test', () => {
+describe('CardContainer test', () => {
   const fakeStore = configureMockStore()({
     data: []
   });
 
   const setup = () => {
-    const props = {
-      fetchData: jest.fn(),
-    };
-
     const wrapper = shallow(
       <Provider store={fakeStore}>
-        <App />
+        <CardContainer />
       </Provider>
     );
-
-    const Component = wrapper.find(App);
+    const Component = wrapper.find(CardContainer);
 
     return {
-      props,
       Component
     };
-  }  
+  };
 
   it('should match its snap shot', () => {
 

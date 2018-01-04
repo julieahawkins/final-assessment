@@ -1,0 +1,564 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card test should match its snap shot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Card
+    houseData={
+        Object {
+            "ancestralWeapons": Array [
+              "Vigilance",
+            ],
+            "coatOfArms": "Cendrée, a tower argent with a beacon on fire gules",
+            "founded": "Age of Dawn",
+            "name": "House Hightower of the Hightower",
+            "seats": Array [
+              "The Hightower, Oldtown",
+            ],
+            "titles": Array [
+              "Lord of the Hightower",
+              "Lord of the Port",
+              "Voice of Oldtown",
+              "Defender of the Citadel",
+              "Beacon of the South",
+              "King of the High Tower (formerly)",
+            ],
+            "words": "We Light the Way",
+          }
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <h1>
+          House Hightower of the Hightower
+</h1>,
+        <h2>
+          We Light the Way
+</h2>,
+        <h3>
+          Founded: 
+          Age of Dawn
+</h3>,
+        Array [
+          <p>
+            Seat: 
+            The Hightower, Oldtown
+</p>,
+        ],
+        Array [
+          <p>
+            Title: 
+            Lord of the Hightower
+</p>,
+          <p>
+            Title: 
+            Lord of the Port
+</p>,
+          <p>
+            Title: 
+            Voice of Oldtown
+</p>,
+          <p>
+            Title: 
+            Defender of the Citadel
+</p>,
+          <p>
+            Title: 
+            Beacon of the South
+</p>,
+          <p>
+            Title: 
+            King of the High Tower (formerly)
+</p>,
+        ],
+        Array [
+          <p>
+            Ancestral Weapons: 
+            Vigilance
+</p>,
+        ],
+        <p>
+          Coat of Arms: 
+          Cendrée, a tower argent with a beacon on fire gules
+</p>,
+      ],
+      "className": "Card",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "House Hightower of the Hightower",
+        },
+        "ref": null,
+        "rendered": "House Hightower of the Hightower",
+        "type": "h1",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "We Light the Way",
+        },
+        "ref": null,
+        "rendered": "We Light the Way",
+        "type": "h2",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "Founded: ",
+            "Age of Dawn",
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          "Founded: ",
+          "Age of Dawn",
+        ],
+        "type": "h3",
+      },
+      Object {
+        "instance": null,
+        "key": "seat-0",
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "Seat: ",
+            "The Hightower, Oldtown",
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          "Seat: ",
+          "The Hightower, Oldtown",
+        ],
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": "title-0",
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "Title: ",
+            "Lord of the Hightower",
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          "Title: ",
+          "Lord of the Hightower",
+        ],
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": "title-1",
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "Title: ",
+            "Lord of the Port",
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          "Title: ",
+          "Lord of the Port",
+        ],
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": "title-2",
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "Title: ",
+            "Voice of Oldtown",
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          "Title: ",
+          "Voice of Oldtown",
+        ],
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": "title-3",
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "Title: ",
+            "Defender of the Citadel",
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          "Title: ",
+          "Defender of the Citadel",
+        ],
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": "title-4",
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "Title: ",
+            "Beacon of the South",
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          "Title: ",
+          "Beacon of the South",
+        ],
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": "title-5",
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "Title: ",
+            "King of the High Tower (formerly)",
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          "Title: ",
+          "King of the High Tower (formerly)",
+        ],
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": "weapon-0",
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "Ancestral Weapons: ",
+            "Vigilance",
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          "Ancestral Weapons: ",
+          "Vigilance",
+        ],
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "Coat of Arms: ",
+            "Cendrée, a tower argent with a beacon on fire gules",
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          "Coat of Arms: ",
+          "Cendrée, a tower argent with a beacon on fire gules",
+        ],
+        "type": "p",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <h1>
+            House Hightower of the Hightower
+</h1>,
+          <h2>
+            We Light the Way
+</h2>,
+          <h3>
+            Founded: 
+            Age of Dawn
+</h3>,
+          Array [
+            <p>
+              Seat: 
+              The Hightower, Oldtown
+</p>,
+          ],
+          Array [
+            <p>
+              Title: 
+              Lord of the Hightower
+</p>,
+            <p>
+              Title: 
+              Lord of the Port
+</p>,
+            <p>
+              Title: 
+              Voice of Oldtown
+</p>,
+            <p>
+              Title: 
+              Defender of the Citadel
+</p>,
+            <p>
+              Title: 
+              Beacon of the South
+</p>,
+            <p>
+              Title: 
+              King of the High Tower (formerly)
+</p>,
+          ],
+          Array [
+            <p>
+              Ancestral Weapons: 
+              Vigilance
+</p>,
+          ],
+          <p>
+            Coat of Arms: 
+            Cendrée, a tower argent with a beacon on fire gules
+</p>,
+        ],
+        "className": "Card",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "House Hightower of the Hightower",
+          },
+          "ref": null,
+          "rendered": "House Hightower of the Hightower",
+          "type": "h1",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "We Light the Way",
+          },
+          "ref": null,
+          "rendered": "We Light the Way",
+          "type": "h2",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "Founded: ",
+              "Age of Dawn",
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            "Founded: ",
+            "Age of Dawn",
+          ],
+          "type": "h3",
+        },
+        Object {
+          "instance": null,
+          "key": "seat-0",
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "Seat: ",
+              "The Hightower, Oldtown",
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            "Seat: ",
+            "The Hightower, Oldtown",
+          ],
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": "title-0",
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "Title: ",
+              "Lord of the Hightower",
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            "Title: ",
+            "Lord of the Hightower",
+          ],
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": "title-1",
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "Title: ",
+              "Lord of the Port",
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            "Title: ",
+            "Lord of the Port",
+          ],
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": "title-2",
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "Title: ",
+              "Voice of Oldtown",
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            "Title: ",
+            "Voice of Oldtown",
+          ],
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": "title-3",
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "Title: ",
+              "Defender of the Citadel",
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            "Title: ",
+            "Defender of the Citadel",
+          ],
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": "title-4",
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "Title: ",
+              "Beacon of the South",
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            "Title: ",
+            "Beacon of the South",
+          ],
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": "title-5",
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "Title: ",
+              "King of the High Tower (formerly)",
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            "Title: ",
+            "King of the High Tower (formerly)",
+          ],
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": "weapon-0",
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "Ancestral Weapons: ",
+              "Vigilance",
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            "Ancestral Weapons: ",
+            "Vigilance",
+          ],
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "Coat of Arms: ",
+              "Cendrée, a tower argent with a beacon on fire gules",
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            "Coat of Arms: ",
+            "Cendrée, a tower argent with a beacon on fire gules",
+          ],
+          "type": "p",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
