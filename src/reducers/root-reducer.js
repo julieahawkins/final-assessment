@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import { fake } from './fake-reducer';
+import { data } from './data-reducer';
 
 const rootReducer = combineReducers({
-  fake
+  data
 });
 
 
