@@ -1,7 +1,7 @@
 import React from 'react';
+import PropTypes, { array } from 'prop-types';
 
 const Card = ({ houseData }) => {
-  console.log(houseData)
   const { 
     name, 
     words, 
@@ -12,17 +12,17 @@ const Card = ({ houseData }) => {
     coatOfArms 
   } = houseData;
 
-  const weaponsDisplay = ancestralWeapons.map((weapon, index) => {
-    return <p key={`weapon-${index}`}>Ancestral Weapons: {weapon}</p>
-  })
+  const weaponsDisplay = ancestralWeapons.map((weapon, index) => 
+    <p key={`weapon-${index}`}>Ancestral Weapons: {weapon}</p>
+  );
 
-  const seatDisplay = seats.map((seat, index) => {
-    return <p key={`seat-${index}`}>Seat: {seat}</p>
-  })
+  const seatDisplay = seats.map((seat, index) => 
+    <p key={`seat-${index}`}>Seat: {seat}</p>
+  );
 
-  const titleDisplay = titles.map((title, index) => {
-    return <p key={`title-${index}`}>Title: {title}</p>
-  })
+  const titleDisplay = titles.map((title, index) => 
+    <p key={`title-${index}`}>Title: {title}</p>
+  );
 
   return (
     <div className='Card'>
@@ -34,7 +34,11 @@ const Card = ({ houseData }) => {
       {weaponsDisplay}
       <p>Coat of Arms: {coatOfArms}</p>
     </div>
-  )
-}
+  );
+};
+
+Card.propTypes = {
+  houseData: array.isRequired
+};
 
 export default Card;

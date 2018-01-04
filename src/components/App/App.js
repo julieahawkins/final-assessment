@@ -14,19 +14,19 @@ class App extends Component {
 
     this.state = {
       isLoaded: false
-    }
+    };
   }
 
   async componentDidMount() {
     await this.props.fetchData(await dataFetch());
-    const isLoaded = !this.state.isLoaded
+    const isLoaded = !this.state.isLoaded;
     await this.setState({ isLoaded });
   }
 
   render() {
     const display = this.state.isLoaded 
       ? <CardContainer /> 
-      : <img src={wolf} id='wolf' alt='running wolf'/>
+      : <img src={wolf} id='wolf' alt='running wolf'/>;
 
     return (
       <div className='App'>
@@ -51,4 +51,5 @@ const mapStateToProps = ({ data }) => ({ data });
 const mapDispatchToProps = dispatch => ({ 
   fetchData: (data) => dispatch(fetchData(data))
 });
+
 export default connect(mapStateToProps, mapDispatchToProps)(App);
