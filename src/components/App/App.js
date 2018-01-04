@@ -25,7 +25,7 @@ class App extends Component {
 }
 
 App.propTypes = {
-  data: shape({ data: 'array' }),
+  data: shape({ data: 'object' }),
   fetchData: func.isRequired
 };
 
