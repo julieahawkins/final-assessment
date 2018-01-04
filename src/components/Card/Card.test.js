@@ -9,7 +9,6 @@ describe('Card test', () => {
     currentSwornData: []
   });
 
-
   const setup = () => {
     const props = {
       showMoreDetails: jest.fn()
@@ -47,5 +46,12 @@ describe('Card test', () => {
   it('should match its snap shot', () => {
     
     expect(setup.wrapper).toMatchSnapshot();
+  });
+
+  it.skip('should change state then card is clicked', () => {
+    const renderedCard = shallow(<Card />)
+    const mockHandleClick = jest.fn();
+    renderedCard.mockHandleClick();
+    expect(showMoreDetails).toHaveBeenCalled()
   });
 });
