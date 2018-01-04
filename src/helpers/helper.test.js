@@ -43,13 +43,13 @@ describe('fetchMoreData', () => {
     expect(fetch).toEqual(mockHouseData);
   });
 
-  it.skip('should return an error if the fetch fails', async () => {
+  it('should return an error if the fetch fails', async () => {
     window.fetch = jest.fn().mockImplementation(() =>
       Promise.reject()
     );
-    const houseMemberData = []
-    const fetch = await fetchMoreData(houseMemberData);
+    const url = ['house member url'];
+    const fetch = await fetchMoreData(url);
 
-    expect(fetch).toEqual(null);
+    expect(fetch).toEqual([null]);
   });
 });
