@@ -4,6 +4,7 @@ import logo from './logo.svg';
 import './App.css';
 import { connect } from 'react-redux';
 import { fetchData } from '../../actions';
+import { dataFetch } from '../../helpers/helper';
 class App extends Component {
   componentDidMount() {
     // this.props.fetchData();
@@ -18,7 +19,7 @@ class App extends Component {
           <img src={logo} className='App-logo' alt='logo' />
           <h2>Welcome to Westeros</h2>
           <button onClick={() => {
-            this.props.fetchData('data');
+            dataFetch();
           }}> Fetch </button>
         </div>
         <div className='Display-info'>
