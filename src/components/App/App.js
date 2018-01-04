@@ -6,10 +6,8 @@ import { connect } from 'react-redux';
 import { fetchData } from '../../actions';
 import { dataFetch } from '../../helpers/helper';
 class App extends Component {
-  componentDidMount() {
-    // this.props.fetchData();
-    // alert(this.props.fake);
-    
+  async componentDidMount() {
+    await this.props.fetchData(await dataFetch());    
   }
 
   render() {
@@ -18,9 +16,6 @@ class App extends Component {
         <div className='App-header'>
           <img src={logo} className='App-logo' alt='logo' />
           <h2>Welcome to Westeros</h2>
-          <button onClick={() => {
-            dataFetch();
-          }}> Fetch </button>
         </div>
         <div className='Display-info'>
         </div>
@@ -30,7 +25,7 @@ class App extends Component {
 }
 
 App.propTypes = {
-  data: shape({ data: string }),
+  data: shape({ data: 'array' }),
   fetchData: func.isRequired
 };
 
