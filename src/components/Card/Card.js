@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes, { array } from 'prop-types';
+import PropTypes, { object } from 'prop-types';
 
 const Card = ({ houseData }) => {
   const { 
@@ -38,7 +38,7 @@ const Card = ({ houseData }) => {
 };
 
 Card.propTypes = {
-  houseData: array.isRequired
+  houseData: object.isRequired
 };
 
 export default Card;
