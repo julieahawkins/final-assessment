@@ -1,7 +1,10 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import PropTypes, { object } from 'prop-types';
+import { showMoreDetails } from '../../actions';
+import { fetchMoreData } from '../../helpers/helper';
 
-const Card = ({ houseData }) => {
+const Card = ({ houseData, showMoreDetails }) => {
   const { 
     name, 
     words, 
@@ -9,7 +12,8 @@ const Card = ({ houseData }) => {
     seats, 
     titles, 
     ancestralWeapons, 
-    coatOfArms 
+    coatOfArms,
+    swornMembers 
   } = houseData;
 
   const weaponsDisplay = ancestralWeapons.map((weapon, index) => 
@@ -24,8 +28,15 @@ const Card = ({ houseData }) => {
     <p key={`title-${index}`}>Title: {title}</p>
   );
 
+  const handleClick = async () => {
+    showMoreDetails(await fetchMoreData(swornMembers))
+    console.log('swornMembers')
+  }
+
   return (
-    <div className='Card'>
+    <div 
+      className='Card'
+      onClick={handleClick}>
       <h1>{name}</h1>
       <h2>{words}</h2>
       <h3>Founded: {founded || 'N/A'}</h3>
@@ -41,4 +52,8 @@ Card.propTypes = {
   houseData: object.isRequired
 };
 
-export default Card;
+const mapDispatchToProps = dispatch => ({ 
+  showMoreDetails: (swornMembers) => dispatch(showMoreDetails(swornMembers))
+});
+
+export default connect(null, mapDispatchToProps)(Card);
