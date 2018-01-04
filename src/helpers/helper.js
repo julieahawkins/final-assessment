@@ -24,5 +24,5 @@ export const fetchMoreData = async (swornMembers) => {
     }
   });
 
-  return Promise.all(swornData)
+  return Promise.all(swornData);
 };

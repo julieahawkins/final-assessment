@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import PropTypes, { object } from 'prop-types';
+import { object, func } from 'prop-types';
 import { showMoreDetails } from '../../actions';
 import { fetchMoreData } from '../../helpers/helper';
 
@@ -11,11 +11,12 @@ class Card extends Component {
     this.state = {
       showMore: false,
       houseSwornMembers: []
-    }
-  };
+    };
+  }
   
   handleClick = async () => {
-    const swornMemberData = await fetchMoreData(this.props.houseData.swornMembers);
+    const { swornMembersUrls } = this.props.houseData;
+    const swornMemberData = await fetchMoreData(swornMembersUrls);
     const houseSwornMembers = !this.state.houseSwornMembers.length 
       ? await this.props.showMoreDetails(swornMemberData).currentSwornMembers
       : [];
@@ -31,18 +32,17 @@ class Card extends Component {
       seats, 
       titles, 
       ancestralWeapons, 
-      coatOfArms,
+      coatOfArms
     } = this.props.houseData;
 
-    const swornMembersDisplay = this.state.houseSwornMembers.map((member, index) => 
+    const { houseSwornMembers } = this.state;
+
+    const swornMembersDisplay = houseSwornMembers.map((member, index) => 
       <p key={`member-${index}`}>{member.name}</p>
     );
 
     const displayMore = this.state.showMore 
-      ? <div>
-          <h3>Sworn Members:</h3> 
-          {swornMembersDisplay}
-        </div>
+      ? <div><h3>Sworn Members:</h3>{swornMembersDisplay}</div>
       : null;
 
     const weaponsDisplay = ancestralWeapons.map((weapon, index) => 
@@ -72,10 +72,11 @@ class Card extends Component {
       </div>
     );
   }
-};
+}
 
 Card.propTypes = {
-  houseData: object.isRequired
+  houseData: object.isRequired,
+  showMoreDetails: func.isRequired
 };
 
 const mapStateToProps = ({ currentSwornData }) => ({ currentSwornData });
