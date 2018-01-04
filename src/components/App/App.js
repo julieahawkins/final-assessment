@@ -5,6 +5,8 @@ import './App.css';
 import { connect } from 'react-redux';
 import { fetchData } from '../../actions';
 import { dataFetch } from '../../helpers/helper';
+import CardContainer from '../CardContainer/CardContainer';
+
 class App extends Component {
   async componentDidMount() {
     await this.props.fetchData(await dataFetch());    
@@ -18,6 +20,7 @@ class App extends Component {
           <h2>Welcome to Westeros</h2>
         </div>
         <div className='Display-info'>
+          <CardContainer />
         </div>
       </div>
     );
