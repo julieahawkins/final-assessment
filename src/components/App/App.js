@@ -18,7 +18,9 @@ class App extends Component {
   }
 
   async componentDidMount() {
-    await this.props.fetchData(await dataFetch());    
+    await this.props.fetchData(await dataFetch());
+    const isLoaded = !this.state.isLoaded
+    await this.setState({ isLoaded });
   }
 
   render() {
