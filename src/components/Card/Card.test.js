@@ -22,7 +22,6 @@ describe('Card test', () => {
     };
 
     const renderedCard = shallow(<Card houseData={mockHouseData}/>);
-    // console.log(renderedCard.debug());
 
     expect(renderedCard).toMatchSnapshot();
   });
