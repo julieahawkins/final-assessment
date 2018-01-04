@@ -28,17 +28,17 @@ describe('dataFetch', () => {
 });
 
 describe('fetchMoreData', () => {
-  it.skip('should return all fetched houseData as an array', async () => {
+  it('should return all fetched houseData as an array', async () => {
     window.fetch = jest.fn().mockImplementation(() =>
       Promise.resolve({
         json: () => Promise.resolve(
-          [{ name: 'House Lannister of Casterly Rock' }]
+          { name: 'House Lannister of Casterly Rock' }
         )
       })
     );
-
-    const fetch = await fetchMoreData();
+    const url = ['house member url']
     const mockHouseData = [{ name: 'House Lannister of Casterly Rock' }];
+    const fetch = await fetchMoreData(url);
 
     expect(fetch).toEqual(mockHouseData);
   });

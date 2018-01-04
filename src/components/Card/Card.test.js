@@ -16,21 +16,21 @@ describe('Card test', () => {
     };
 
     const mockHouseDataProps = {
-        name: 'House Hightower of the Hightower', 
-        words: 'We Light the Way', 
-        founded: 'Age of Dawn', 
-        seats: ['The Hightower, Oldtown'], 
-        titles: [
-          'Lord of the Hightower',
-          'Lord of the Port',
-          'Voice of Oldtown',
-          'Defender of the Citadel',
-          'Beacon of the South',
-          'King of the High Tower (formerly)'
-        ], 
-        ancestralWeapons: ['Vigilance'], 
-        coatOfArms: 'Cendrée, a tower argent with a beacon on fire gules'  
-      };
+      name: 'House Hightower of the Hightower', 
+      words: 'We Light the Way', 
+      founded: 'Age of Dawn', 
+      seats: ['The Hightower, Oldtown'], 
+      titles: [
+        'Lord of the Hightower',
+        'Lord of the Port',
+        'Voice of Oldtown',
+        'Defender of the Citadel',
+        'Beacon of the South',
+        'King of the High Tower (formerly)'
+      ], 
+      ancestralWeapons: ['Vigilance'], 
+      coatOfArms: 'Cendrée, a tower argent with a beacon on fire gules'  
+    };
 
     const wrapper = shallow(
       <Provider store={fakeStore}>
