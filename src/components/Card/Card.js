@@ -13,26 +13,26 @@ const Card = ({ houseData }) => {
   } = houseData;
 
   const weaponsDisplay = ancestralWeapons.map((weapon, index) => {
-    return <p key={`weapon-${index}`}>ancestralWeapon: {weapon}</p>
+    return <p key={`weapon-${index}`}>Ancestral Weapons: {weapon}</p>
   })
 
   const seatDisplay = seats.map((seat, index) => {
-    return <p key={`seat-${index}`}>seat: {seat}</p>
+    return <p key={`seat-${index}`}>Seat: {seat}</p>
   })
 
   const titleDisplay = titles.map((title, index) => {
-    return <p key={`title-${index}`}>title: {title}</p>
+    return <p key={`title-${index}`}>Title: {title}</p>
   })
 
   return (
     <div className='Card'>
       <h1>{name}</h1>
       <h2>{words}</h2>
-      <h3>{founded}</h3>
+      <h3>Founded: {founded || 'N/A'}</h3>
       {seatDisplay}
       {titleDisplay}
       {weaponsDisplay}
-      <p>{coatOfArms}</p>
+      <p>Coat of Arms: {coatOfArms}</p>
     </div>
   )
 }
